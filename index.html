@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script src="angular.min.js"></script>
+	<script src="myjs.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<title>Todo</title>
+</head>
+
+<body background="bck.jpg">
+	<h1 id="heading">Todo</h1>
+	<hr>
+	<div ng-app="todo" ng-controller="ctrl" id="d01">
+		<ul id="l01">
+			<li id="li01" ng-repeat="x in todos" class="container">
+				<span ng-click="changecheck($index)"><input type="checkbox" id="chk"></span>
+				<span id="text">{{x}}</span>
+				<span ng-click="tdremove($index)"><button type="button" class="button button1">Remove</button></span>
+			</li>
+		</ul>
+		<input type="submit" id="cbtn" ng-click="clco()" value="Clear Completed">
+		<br><br>
+		<form novalidate id="f01">
+			<input ng-model="newtd" id="new01" placeholder="Details of your new todo">
+			<input type="submit" class="button button2" ng-click="newtdpush()" value="Add">
+		</form>
+	</div>
+</body>
+
+</html>
